@@ -1,0 +1,19 @@
+dvc
+evidently
+gdown
+joblib
+mlflow==2.8.1
+numpy
+pandas
+python-box
+PyYAML
+setuptools
+tqdm
+typeguard
+types-PyYAML
+seaborn
+dagshub
+dvc
+dask
+-e .
+                                                
