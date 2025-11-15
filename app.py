@@ -25,14 +25,14 @@ set_config(transform_output="pandas")
 root_path = Path(__file__).parent
 # path of the data
 
-plot_data_path = root_path / "data/test (1).csv"
+plot_data_path = root_path / "data/final.csv"
 data_path = root_path / "data/test (1).csv"
 
 # model paths
 kmeans_path = root_path / "models/mb_kmeansAlgo.joblib"
 scaler_path = root_path / "models/scalerobj.joblib"
 encoder_path = root_path / "models/encoder.joblib"
-model_path = root_path / "models/lr_model.joblib"
+model_path = root_path / "models/lr_model.pkl"
 
 # load the objects
 scaler = joblib.load(scaler_path)
@@ -96,7 +96,7 @@ if date and time:
               
        st.write("Region ID: ", region)
        # scale the data
-       scaled_cord = scaler.transform(sample_loc.iloc[:, 0:2])
+       scaled_cord = scaler.transform(sample_loc.iloc[:, [1,0]])
        
        # plot the map
        st.subheader("MAP")
